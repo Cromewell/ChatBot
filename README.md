@@ -9,7 +9,7 @@ If a sentence contains:
 - "exit", "goodbye", "ciao", "bye", "im out", "i'm out"
 - "thank you", "ty", "thanks", "thx"
 
-Sentence is equal:
+Sentence is equal to:
 - "why?", "why why why?"
 
 The bot gets triggered.
