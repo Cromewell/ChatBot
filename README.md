@@ -8,6 +8,7 @@ If a sentence contains:
 - "what time is it", "what is the time", "what's the time"
 - "exit", "goodbye", "ciao", "bye", "im out", "i'm out"
 - "thank you", "ty", "thanks", "thx"
+
 Sentence is equal:
 - "why?", "why why why?"
 
