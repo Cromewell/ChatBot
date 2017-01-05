@@ -23,5 +23,6 @@ class Phrases {
     static final ArrayList<String> EXIT = new ArrayList<>(Arrays.asList("exit", "goodbye", "ciao", "bye", "im out", "i'm out"));
     static final ArrayList<String> WHAT_TIME_IS_IT = new ArrayList<>(Arrays.asList("what time is it", "what is the time", "what's the time"));
     static final ArrayList<String> LOL = new ArrayList<>(Arrays.asList("lol", "lool", "haha", "lel", "lul", "hehe"));
+    static final ArrayList<String> THANKS = new ArrayList<>(Arrays.asList("thank you", "ty", "thanks", "thx"));
 
 }

@@ -93,7 +93,7 @@ class ChatBot{
         }else if(matches(input, Phrases.WHAT_TIME_IS_IT)){
             DateFormat df = new SimpleDateFormat("HH:mm:ss");
             pause.setOnFinished(e->chat.appendText(botName+": It is " + df.format(new Date())+"\n"));
-        }else if(input.contains("thank you")|input.contains("ty")|input.contains("thanks")|input.contains("thx")){
+        }else if(matches(input, Phrases.THANKS)){
             answer(Phrases.NO_PROBLEM);
         }else if(input.equals("why?")){
             pause.setOnFinished(e->chat.appendText(botName+": why why?\n"));
