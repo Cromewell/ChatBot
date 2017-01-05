@@ -14,14 +14,14 @@ import javafx.stage.Stage;
 
 /**
  * Created by Jo on 30.12.2016.
- *
+ * Creates the gui and starts the bot.
  */
 public class Main extends Application{
 
-    TextArea chat;
-    TextField inputField;
-    Button send;
-    ImageView face;
+    private TextArea chat;
+    private TextField inputField;
+    private Button send;
+    private ImageView face;
 
     public static void main(String[] args){
         launch();

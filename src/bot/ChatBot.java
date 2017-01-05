@@ -6,7 +6,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,9 +14,9 @@ import java.util.Date;
 
 /**
  * Created by Jo on 30.12.2016.
- *
+ * Bot class manages the gui input and updates the gui.
  */
-public class ChatBot{
+class ChatBot{
 
     private String userName;
     private TextArea chat;
@@ -30,7 +29,7 @@ public class ChatBot{
     private long thinkingTime = 2000;
     private PauseTransition pause;
 
-    public ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
+    ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;
         this.inputField = inputField;
         this.send = send;
@@ -67,13 +66,13 @@ public class ChatBot{
         //so, for instance: "chatted with 12 Jons already! Was one of them you?"
     }
 
-    public void greetUser() {
+    private void greetUser() {
         Collections.shuffle(Phrases.GREETINGS);
         chat.appendText(botName+": "+Phrases.GREETINGS.get(0).replace("%user%", userName)+"\n");
         pause.setOnFinished(null);
     }
 
-    public String readInput(){
+    private String readInput(){
         return inputField.getText();
     }
 
