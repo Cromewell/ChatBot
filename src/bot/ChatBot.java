@@ -35,6 +35,10 @@ class ChatBot{
         this.send = send;
         this.face = face;
 
+        /*
+          Reads the inputfield when send is clicked.
+          Appends the message, if its length is > 0 and clears the textfield.
+         */
         send.setOnAction(e-> {
             in = readInput();
             try {
@@ -72,10 +76,19 @@ class ChatBot{
         pause.setOnFinished(null);
     }
 
+    /**
+     * Reads from the textfield.
+     * @return    The textfields text.
+     */
     private String readInput(){
         return inputField.getText();
     }
 
+    /**
+     * Handles the user input string by checking for matches in the bot vocabulary and then answers the user.
+     * @param input    String to handle.
+     * @throws InterruptedException    Failure..
+     */
     private void handleInput(String input) throws InterruptedException {
         input = input.toLowerCase();
         pause.setDuration(Duration.millis(writeTime));
@@ -116,6 +129,12 @@ class ChatBot{
         pause.play();
     }
 
+    /**
+     * Checks whether the given string is in the bots vocabluary or not.
+     * @param string    String to match.
+     * @param strings    The bots vocabulary.
+     * @return true, if a match was found. Otherwise false.
+     */
     private boolean matches(String string, ArrayList<String> strings) {
         for(String s: strings){
             if(string.contains(s)){
@@ -125,6 +144,10 @@ class ChatBot{
         return false;
     }
 
+    /**
+     * Displays a random answer out of a suitable list.
+     * @param list    List with answers.
+     */
     private void answer(ArrayList<String> list) {
         Collections.shuffle(list);
         String answer = list.get(0);

@@ -26,6 +26,7 @@ public class Main extends Application{
     public static void main(String[] args){
         launch();
     }
+
     //GUI//
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -45,6 +46,10 @@ public class Main extends Application{
         }
     }
 
+    /**
+     * Initalizes the components on the root pane
+     * @param root    Root pane
+     */
     private void initComponents(VBox root) {
         //Face image
         face = new ImageView(new Image("res/smile.png", 16*30, 16*30, false, false));
@@ -54,8 +59,7 @@ public class Main extends Application{
         chat = new TextArea();
         chat.setEditable(false);
         chat.setFocusTraversable(false);
-        chat.setBorder((new Border(new BorderStroke(Color.BLACK,
-                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT))));
+        chat.setBorder((new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT))));
         chat.setStyle("-fx-focus-color: -fx-control-inner-background ; -fx-faint-focus-color: -fx-control-inner-background ;");
         root.getChildren().add(chat);
 
