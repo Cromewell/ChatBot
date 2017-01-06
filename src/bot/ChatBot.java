@@ -127,13 +127,13 @@ class ChatBot{
         }else if(matches(input, Phrases.HOW_OLD_ARE_YOU)){
             answer(Phrases.BOTS_AGE);
             DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-            int days = Integer.parseInt(df.format(new Date()).substring(0, 2));
-            int months = Integer.parseInt(df.format(new Date()).substring(3, 5));
-            int years = Integer.parseInt(df.format(new Date()).substring(6, 10))-2016;
-            if(months <= 12 && days < 30){
-                years--;
+            int day = Integer.parseInt(df.format(new Date()).substring(0, 2));
+            int month = Integer.parseInt(df.format(new Date()).substring(3, 5));
+            int yearsAlive = Integer.parseInt(df.format(new Date()).substring(6, 10))-2016;
+            if(month <= 12 && day < 30){
+                yearsAlive--;
             }
-            int finalYears = years;
+            int finalYears = yearsAlive;
             pause.setOnFinished(e->chat.appendText("  So I'm " + finalYears +"\n"));
         }else{
             pause.setDuration(Duration.millis(thinkingTime));
