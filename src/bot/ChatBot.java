@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.util.Duration;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -22,16 +23,16 @@ class ChatBot{
     private TextArea chat;
     private TextField inputField;
     private ImageView face;
-    private String botName = "Kurt";
-    private long writeTime = 500;
-    private long thinkingTime = 2000;
-    private long faceTime = 3000;
     private PauseTransition pause;
+    private final String botName = "Kurt";
+    //following longs measured in milliseconds
+    private final long writeTime = 500;
+    private final long thinkingTime = 1700;
+    private final long faceTime = 3000;
 
     ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;
         this.inputField = inputField;
-        Button send1 = send;
         this.face = face;
 
         /*
@@ -49,6 +50,12 @@ class ChatBot{
                 e1.printStackTrace();
             }
             inputField.clear();
+        });
+        //enable pressing enter to send message:
+        inputField.setOnKeyPressed(ke->{
+            if(ke.getCode() == KeyCode.ENTER){
+                send.fire();
+            }
         });
         chat.appendText(botName+": What's your name? :)\n");
 
@@ -134,6 +141,8 @@ class ChatBot{
             }
             int finalYears = yearsAlive;
             pause.setOnFinished(e->chat.appendText("  So I'm " + finalYears +"\n"));
+        }else if(matches(input, Phrases.HELLO)){
+            answer(Phrases.GREETINGS);
         }else if(matches(input, Phrases.CONFIRMATIONS)){
             answer(Phrases.ANSWERS_TO_CONFIRMATIONS);
         }else if(matches(input, Phrases.NEED_OF_WISDOM)){
@@ -211,10 +220,5 @@ class ChatBot{
         PauseTransition pause = new PauseTransition(Duration.millis(writeTime));
         pause.setOnFinished(e->chat.appendText(botName+": "+ finalAnswer +"\n"));
         pause.play();
-    }
-
-    //Getters
-    public String getBotName() {
-        return botName;
     }
 }
