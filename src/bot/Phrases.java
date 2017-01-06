@@ -33,7 +33,7 @@ class Phrases {
     static final ArrayList<String> LOL = new ArrayList<>(Arrays.asList("lol", "lool", "haha", "lel", "lul", "hehe"));
     static final ArrayList<String> TELL_ME_A_JOKE = new ArrayList<>(Arrays.asList("tell me a joke"));
     static final ArrayList<String> HOW_OLD_ARE_YOU = new ArrayList<>(Arrays.asList("how old are you", "when were you born", "what is your age", "what's your age"));
-    static final ArrayList<String> CONFIRMATIONS = new ArrayList<>(Arrays.asList("nice", "okay", ":)", "that was funny", "cool", "wow", ":D", "that is good", "that's good", "thats good"));
+    static final ArrayList<String> CONFIRMATIONS = new ArrayList<>(Arrays.asList("nice", "okay", "that was funny", "cool", "wow", "that is good", "that's good", "thats good"));
     static final ArrayList<String> NEED_OF_WISDOM = new ArrayList<>(Arrays.asList("tell me wise words", "wise words", "what is wise", "do you have an advise", "advise", "wisdom", "if i had wisdom"));
 
     static final ArrayList<String> WHAT_TIME_IS_IT = new ArrayList<>(Arrays.asList("what time is it", "what is the time", "what's the time"));
