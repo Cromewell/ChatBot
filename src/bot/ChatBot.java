@@ -139,6 +139,9 @@ class ChatBot{
             answer(Phrases.ANSWERS_TO_CONFIRMATIONS);
         }else if(matches(input, Phrases.NEED_OF_WISDOM)){
             answer(Phrases.WISE_WORDS);
+            pause.setDuration(Duration.millis(thinkingTime));
+            Platform.runLater(() -> face.setImage(new Image("res/wise.png", 16*30, 16*30, false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
         }else{
             pause.setDuration(Duration.millis(thinkingTime));
             Platform.runLater(() -> face.setImage(new Image("res/confused.png", 16*30, 16*30, false, false)));

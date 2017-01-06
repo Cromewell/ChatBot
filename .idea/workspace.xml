@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4366b449-6453-4e79-a59f-fe2f9c2f70f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/ChatBot.java" afterPath="$PROJECT_DIR$/src/bot/ChatBot.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/Phrases.java" afterPath="$PROJECT_DIR$/src/bot/Phrases.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,25 +25,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bot/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="140" column="37" lean-forward="false" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
+            <state relative-caret-position="220">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8223#8224#0" expanded="true" />
-                <element signature="e#8253#8254#0" expanded="true" />
+                <element signature="e#8500#8501#0" expanded="true" />
+                <element signature="e#8530#8531#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Phrases.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Phrases.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/Phrases.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="35" column="128" lean-forward="false" selection-start-line="35" selection-start-column="128" selection-end-line="35" selection-end-column="128" />
+            <state relative-caret-position="221">
+              <caret line="24" column="160" lean-forward="false" selection-start-line="24" selection-start-column="160" selection-end-line="24" selection-end-column="160" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,8 +95,8 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/bot/Wait.java" />
         <option value="$PROJECT_DIR$/src/bot/Main.java" />
-        <option value="$PROJECT_DIR$/src/bot/ChatBot.java" />
         <option value="$PROJECT_DIR$/src/bot/Phrases.java" />
+        <option value="$PROJECT_DIR$/src/bot/ChatBot.java" />
       </list>
     </option>
   </component>
@@ -576,8 +577,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -618,8 +619,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,8 +651,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,8 +683,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -714,8 +715,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -746,8 +747,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,8 +779,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -949,24 +950,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bot/ChatBot.java">
+    <entry file="file://$PROJECT_DIR$/src/bot/Phrases.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="140" column="37" lean-forward="false" selection-start-line="140" selection-start-column="37" selection-end-line="140" selection-end-column="37" />
+        <state relative-caret-position="221">
+          <caret line="24" column="160" lean-forward="false" selection-start-line="24" selection-start-column="160" selection-end-line="24" selection-end-column="160" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8223#8224#0" expanded="true" />
-            <element signature="e#8253#8254#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bot/Phrases.java">
+    <entry file="file://$PROJECT_DIR$/src/bot/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" column="128" lean-forward="false" selection-start-line="35" selection-start-column="128" selection-end-line="35" selection-end-column="128" />
+        <state relative-caret-position="220">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8500#8501#0" expanded="true" />
+            <element signature="e#8530#8531#0" expanded="true" />
           </folding>
         </state>
       </provider>
