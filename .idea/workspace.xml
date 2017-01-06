@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4366b449-6453-4e79-a59f-fe2f9c2f70f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/ChatBot.java" afterPath="$PROJECT_DIR$/src/bot/ChatBot.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
