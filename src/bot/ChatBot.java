@@ -23,7 +23,6 @@ class ChatBot{
     private TextField inputField;
     private Button send;
     private ImageView face;
-    private String in = "";
     private String botName = "Alica";
     private long writeTime = 500;
     private long thinkingTime = 2000;
@@ -40,7 +39,7 @@ class ChatBot{
           Appends the message, if its length is > 0 and clears the textfield.
          */
         send.setOnAction(e-> {
-            in = readInput();
+            String in = readInput();
             try {
                 if(in.length() > 0) {
                     chat.appendText(userName+": "+in+"\n");
@@ -90,8 +89,11 @@ class ChatBot{
      * @throws InterruptedException    Failure..
      */
     private void handleInput(String input) throws InterruptedException {
-        input = input.toLowerCase();
+        input = adjustEnglish(input.toLowerCase());
+        System.out.println(input);
+
         pause.setDuration(Duration.millis(writeTime));
+        pause.setOnFinished(null); //reset
 
         if(matches(input, Phrases.HOW_ARE_YOU)){
             answer(Phrases.ANSWERS_TO_HOW_ARE_YOU);
@@ -118,6 +120,11 @@ class ChatBot{
             pause.setDuration(Duration.millis(thinkingTime));
             Platform.runLater(() -> face.setImage(new Image("res/laughing.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
+        }else if(matches(input, Phrases.TELL_ME_A_JOKE)){
+            answer(Phrases.JOKES);
+            pause.setDuration(Duration.millis(thinkingTime));
+            Platform.runLater(() -> face.setImage(new Image("res/joking.png", 16*30, 16*30, false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
         }else{
             pause.setDuration(Duration.millis(thinkingTime));
             Platform.runLater(() -> face.setImage(new Image("res/confused.png", 16*30, 16*30, false, false)));
@@ -127,6 +134,31 @@ class ChatBot{
             });
         }
         pause.play();
+    }
+
+    private String adjustEnglish(String input) {
+        input = input.replaceAll("[!?.,]", "");
+        if(input.contains(" u ")){
+            input = input.replace(" u ", " you ");
+        }
+        if(input.contains(" r ")){
+            input = input.replace(" r ", " are ");
+        }
+        if(input.endsWith(" u")){
+            input = input.substring(0, input.lastIndexOf(" u"));
+            input = input+" you";
+        }
+        if(input.contains("'re ")){
+            input = input.replace("'re ", " are ");
+        }
+        if(input.contains(" i'm ")){
+            input = input.replace(" i'm ", "i am ");
+        }
+        if(input.startsWith("im ")){
+            input = input.substring(3);
+            input = "i am "+input;
+        }
+        return input;
     }
 
     /**
@@ -158,5 +190,11 @@ class ChatBot{
         PauseTransition pause = new PauseTransition(Duration.millis(writeTime));
         pause.setOnFinished(e->chat.appendText(botName+": "+ finalAnswer +"\n"));
         pause.play();
+    }
+
+    //Getters
+
+    public String getBotName() {
+        return botName;
     }
 }
