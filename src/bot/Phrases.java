@@ -6,6 +6,7 @@ import java.util.Arrays;
 /**
  * Created by Jo on 30.12.2016.
  * Holds the responses and the known vocabulary of the bot.
+ * As list, even if it holds only one word, to make it easy to add words.
  */
 class Phrases {
     //responses

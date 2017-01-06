@@ -146,6 +146,11 @@ class ChatBot{
         pause.play();
     }
 
+    /**
+     * Lower the amount of combinations by spelling the abbreviations in full.
+     * @param input    String to check.
+     * @return    Words fully spelled.
+     */
     private String adjustEnglish(String input) {
         input = input.replaceAll("[!?.,]", "");
         if(input.contains(" u ")){
@@ -203,7 +208,6 @@ class ChatBot{
     }
 
     //Getters
-
     public String getBotName() {
         return botName;
     }
