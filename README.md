@@ -9,6 +9,7 @@ If a sentence contains:
 - "exit", "goodbye", "ciao", "bye", "im out", "i'm out"
 - "thank you", "ty", "thanks", "thx"
 - "tell me a joke"
+- "how old are you", "when were you born", "what is your age", "what's your age"
 
 Or the sentence is equal to:
 - "why?", "why why why?"
