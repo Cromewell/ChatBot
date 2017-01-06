@@ -135,6 +135,10 @@ class ChatBot{
             }
             int finalYears = yearsAlive;
             pause.setOnFinished(e->chat.appendText("  So I'm " + finalYears +"\n"));
+        }else if(matches(input, Phrases.CONFIRMATIONS)){
+            answer(Phrases.ANSWERS_TO_CONFIRMATIONS);
+        }else if(matches(input, Phrases.NEED_OF_WISDOM)){
+            answer(Phrases.WISE_WORDS);
         }else{
             pause.setDuration(Duration.millis(thinkingTime));
             Platform.runLater(() -> face.setImage(new Image("res/confused.png", 16*30, 16*30, false, false)));
