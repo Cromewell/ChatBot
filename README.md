@@ -10,6 +10,8 @@ If a sentence contains:
 - "thank you", "ty", "thanks", "thx"
 - "tell me a joke"
 - "how old are you", "when were you born", "what is your age", "what's your age"
+- "nice", "okay", ":)", "that was funny", "cool", "wow", ":D", "that is good", "that's good", "thats good"
+- "tell me wise words", "wise words", "what is wise", "do you have an advise", "advise", "wisdom", "if i had wisdom"
 
 Or the sentence is equal to:
 - "why?", "why why why?"
