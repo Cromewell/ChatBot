@@ -130,8 +130,8 @@ class ChatBot{
             int days = Integer.parseInt(df.format(new Date()).substring(0, 2));
             int months = Integer.parseInt(df.format(new Date()).substring(3, 5));
             int years = Integer.parseInt(df.format(new Date()).substring(6, 10))-2016;
-            if(months == 12 && days >= 30){
-                years++;
+            if(months <= 12 && days < 30){
+                years--;
             }
             int finalYears = years;
             pause.setOnFinished(e->chat.appendText("  So I'm " + finalYears +"\n"));
