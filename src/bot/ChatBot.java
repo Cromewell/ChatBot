@@ -90,7 +90,6 @@ class ChatBot{
      */
     private void handleInput(String input) throws InterruptedException {
         input = adjustEnglish(input.toLowerCase());
-        System.out.println(input);
 
         pause.setDuration(Duration.millis(writeTime));
         pause.setOnFinished(null); //reset
@@ -125,6 +124,17 @@ class ChatBot{
             pause.setDuration(Duration.millis(thinkingTime));
             Platform.runLater(() -> face.setImage(new Image("res/joking.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
+        }else if(matches(input, Phrases.HOW_OLD_ARE_YOU)){
+            answer(Phrases.BOTS_AGE);
+            DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+            int days = Integer.parseInt(df.format(new Date()).substring(0, 2));
+            int months = Integer.parseInt(df.format(new Date()).substring(3, 5));
+            int years = Integer.parseInt(df.format(new Date()).substring(6, 10))-2016;
+            if(months == 12 && days >= 30){
+                years++;
+            }
+            int finalYears = years;
+            pause.setOnFinished(e->chat.appendText("  So I'm " + finalYears +"\n"));
         }else{
             pause.setDuration(Duration.millis(thinkingTime));
             Platform.runLater(() -> face.setImage(new Image("res/confused.png", 16*30, 16*30, false, false)));
