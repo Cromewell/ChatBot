@@ -21,17 +21,17 @@ class ChatBot{
     private String userName;
     private TextArea chat;
     private TextField inputField;
-    private Button send;
     private ImageView face;
-    private String botName = "Alica";
+    private String botName = "Kurt";
     private long writeTime = 500;
     private long thinkingTime = 2000;
+    private long faceTime = 3000;
     private PauseTransition pause;
 
     ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;
         this.inputField = inputField;
-        this.send = send;
+        Button send1 = send;
         this.face = face;
 
         /*
@@ -103,7 +103,6 @@ class ChatBot{
             pause.setDuration(Duration.millis(thinkingTime));
             Platform.runLater(() -> face.setImage(new Image("res/sad.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> System.exit(0));
-
         }else if(matches(input, Phrases.WHAT_TIME_IS_IT)){
             DateFormat df = new SimpleDateFormat("HH:mm:ss");
             pause.setOnFinished(e->chat.appendText(botName+": It is " + df.format(new Date())+"\n"));
@@ -116,12 +115,12 @@ class ChatBot{
             pause.setOnFinished(e->chat.appendText(botName+": why why why why?\n"));
         }else if(matches(input, Phrases.LOL)){
             answer(Phrases.LAUGHING);
-            pause.setDuration(Duration.millis(thinkingTime));
+            pause.setDuration(Duration.millis(faceTime));
             Platform.runLater(() -> face.setImage(new Image("res/laughing.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
         }else if(matches(input, Phrases.TELL_ME_A_JOKE)){
             answer(Phrases.JOKES);
-            pause.setDuration(Duration.millis(thinkingTime));
+            pause.setDuration(Duration.millis(faceTime));
             Platform.runLater(() -> face.setImage(new Image("res/joking.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
         }else if(matches(input, Phrases.HOW_OLD_ARE_YOU)){
@@ -139,7 +138,7 @@ class ChatBot{
             answer(Phrases.ANSWERS_TO_CONFIRMATIONS);
         }else if(matches(input, Phrases.NEED_OF_WISDOM)){
             answer(Phrases.WISE_WORDS);
-            pause.setDuration(Duration.millis(thinkingTime));
+            pause.setDuration(Duration.millis(faceTime));
             Platform.runLater(() -> face.setImage(new Image("res/wise.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
         }else{
