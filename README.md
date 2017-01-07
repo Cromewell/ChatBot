@@ -17,3 +17,6 @@ Or the sentence is equal to:
 - "why?", "why why why?"
 
 The bot gets triggered.
+
+After a command:
+- "timer hh:mm:ss" a timer is setted. hh stands for hours, mm for minutes, ss for seconds. For example "timer 00:00:10" will ring in 10 seconds
