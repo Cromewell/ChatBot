@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4366b449-6453-4e79-a59f-fe2f9c2f70f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/ChatBot.java" afterPath="$PROJECT_DIR$/src/bot/ChatBot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" afterPath="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,14 +54,14 @@
       <file leaf-file-name="TimerCommand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bot/commands/TimerCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="54" column="30" lean-forward="false" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+            <state relative-caret-position="170">
+              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#378#379#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-                <element signature="e#456#457#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
+                <element signature="e#393#394#0" expanded="true" />
+                <element signature="e#423#424#0" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#512#513#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1060,14 +1060,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bot/commands/TimerCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="54" column="30" lean-forward="false" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+        <state relative-caret-position="170">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
           </folding>
         </state>
       </provider>
