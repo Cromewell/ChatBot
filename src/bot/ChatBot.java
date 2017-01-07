@@ -1,5 +1,7 @@
 package bot;
 
+import bot.commands.Command;
+import bot.commands.TimerCommand;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.scene.control.*;
@@ -7,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.util.Duration;
+
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,6 +33,8 @@ class ChatBot{
     private final long writeTime = 500;
     private final long thinkingTime = 1700;
     private final long faceTime = 3000;
+    //commands
+    private final Command[] cmds = {new TimerCommand("timer")};
 
     ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;
@@ -101,6 +107,17 @@ class ChatBot{
         pause.setDuration(Duration.millis(writeTime));
         pause.setOnFinished(null); //reset
 
+        //check if input is a command
+
+        for(Command cmd: cmds){
+            if(cmd.isValid(input)){
+                cmd.execute();
+                return;
+            }
+        }
+
+        //end checking
+
         if(matches(input, Phrases.HOW_ARE_YOU)){
             answer(Phrases.ANSWERS_TO_HOW_ARE_YOU);
         }else if(matches(input, Phrases.WHAT_ARE_YOU_DOING)){
@@ -108,7 +125,7 @@ class ChatBot{
         }else if(matches(input, Phrases.EXIT)){
             answer(Phrases.GOODBYES);
             pause.setDuration(Duration.millis(thinkingTime));
-            Platform.runLater(() -> face.setImage(new Image("res/sad.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+ File.separator+"sad.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> System.exit(0));
         }else if(matches(input, Phrases.WHAT_TIME_IS_IT)){
             DateFormat df = new SimpleDateFormat("HH:mm:ss");
@@ -123,13 +140,13 @@ class ChatBot{
         }else if(matches(input, Phrases.LOL)){
             answer(Phrases.LAUGHING);
             pause.setDuration(Duration.millis(faceTime));
-            Platform.runLater(() -> face.setImage(new Image("res/laughing.png", 16*30, 16*30, false, false)));
-            pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"laughing.png", 16*30, 16*30, false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
         }else if(matches(input, Phrases.TELL_ME_A_JOKE)){
             answer(Phrases.JOKES);
             pause.setDuration(Duration.millis(faceTime));
-            Platform.runLater(() -> face.setImage(new Image("res/joking.png", 16*30, 16*30, false, false)));
-            pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"joking.png", 16*30, 16*30, false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
         }else if(matches(input, Phrases.HOW_OLD_ARE_YOU)){
             answer(Phrases.BOTS_AGE);
             DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
@@ -148,14 +165,14 @@ class ChatBot{
         }else if(matches(input, Phrases.NEED_OF_WISDOM)){
             answer(Phrases.WISE_WORDS);
             pause.setDuration(Duration.millis(faceTime));
-            Platform.runLater(() -> face.setImage(new Image("res/wise.png", 16*30, 16*30, false, false)));
-            pause.setOnFinished(e-> face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"wise.png", 16*30, 16*30, false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
         }else{
             pause.setDuration(Duration.millis(thinkingTime));
-            Platform.runLater(() -> face.setImage(new Image("res/confused.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"confused.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e->{
                 answer(Phrases.DIDNT_UNDERSTAND);
-                face.setImage(new Image("res/smile.png", 16*30, 16*30, false, false));
+                face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false));
             });
         }
         pause.play();
