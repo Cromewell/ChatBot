@@ -1,5 +1,6 @@
 package bot.commands;
 
+import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.net.URISyntaxException;
@@ -49,13 +50,13 @@ public class TimerCommand extends Command{
         for(int i  = 0; i < tmp.length; i++){
             switch(i) {
                 case 0:
-                    sleepTimeInMillis += Integer.parseInt(tmp[0]) * 60 * 60 * 1000;
+                    sleepTimeInMillis += Integer.parseInt(tmp[0]) * 60 * 60 * 1000; //hours to millis
                     break;
                 case 1:
-                    sleepTimeInMillis += Integer.parseInt(tmp[1]) * 60 * 1000;
+                    sleepTimeInMillis += Integer.parseInt(tmp[1]) * 60 * 1000; //minutes to millis
                     break;
                 case 2:
-                    sleepTimeInMillis += Integer.parseInt(tmp[2]) * 1000;
+                    sleepTimeInMillis += Integer.parseInt(tmp[2]) * 1000; //seconds to millis
                     break;
             }
         }
@@ -66,16 +67,16 @@ public class TimerCommand extends Command{
      */
     @Override
     public void execute() {
+        System.out.println("Timer set");
         long sleepTime = sleepTimeInMillis;
-        sleepTimeInMillis = 0;
+        sleepTimeInMillis = 0; //reset
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     Thread.sleep(sleepTime);
-                    Media sound = new Media(getClass().getResource("/res/timer.wav").toURI().toString());
-                    MediaPlayer mediaPlayer = new MediaPlayer(sound);
-                    mediaPlayer.play();
+                    AudioClip timerSound = new AudioClip(getClass().getResource("/res/timer.wav").toURI().toString());
+                    timerSound.play();
                 } catch (InterruptedException | URISyntaxException e) {
                     e.printStackTrace();
                 }
