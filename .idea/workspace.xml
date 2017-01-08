@@ -8,10 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4366b449-6453-4e79-a59f-fe2f9c2f70f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatBot.iml" afterPath="$PROJECT_DIR$/ChatBot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/ChatBot.java" afterPath="$PROJECT_DIR$/src/bot/ChatBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/Command.java" afterPath="$PROJECT_DIR$/src/bot/commands/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" afterPath="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,9 +128,9 @@
         <option value="$PROJECT_DIR$/src/bot/Phrases.java" />
         <option value="$PROJECT_DIR$/src/bot/Main.java" />
         <option value="$PROJECT_DIR$/src/bot/commands/GoogleCommand.java" />
-        <option value="$PROJECT_DIR$/src/bot/ChatBot.java" />
         <option value="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" />
         <option value="$PROJECT_DIR$/src/bot/commands/Command.java" />
+        <option value="$PROJECT_DIR$/src/bot/ChatBot.java" />
       </list>
     </option>
   </component>
