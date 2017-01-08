@@ -1,8 +1,6 @@
 package bot.commands;
 
 import javafx.scene.media.AudioClip;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import java.net.URISyntaxException;
 import java.util.regex.Pattern;
 
@@ -67,7 +65,6 @@ public class TimerCommand extends Command{
      */
     @Override
     public void execute() {
-        System.out.println("Timer set");
         long sleepTime = sleepTimeInMillis;
         sleepTimeInMillis = 0; //reset
         new Thread(new Runnable() {

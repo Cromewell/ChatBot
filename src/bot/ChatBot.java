@@ -1,6 +1,7 @@
 package bot;
 
 import bot.commands.Command;
+import bot.commands.GoogleCommand;
 import bot.commands.TimerCommand;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
@@ -34,7 +35,7 @@ class ChatBot{
     private final long thinkingTime = 1700;
     private final long faceTime = 3000;
     //commands
-    private final Command[] cmds = {new TimerCommand("timer")};
+    private final Command[] cmds = {new TimerCommand("timer"), new GoogleCommand("google")};
 
     ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;
