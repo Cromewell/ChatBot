@@ -22,6 +22,8 @@ public class Main extends Application{
     private TextField inputField;
     private Button send;
     private ImageView face;
+    private static final int WIDTH = 16*30; //Window and image width
+    private static final int IMG_HEIGHT = 16*30;
 
     public static void main(String[] args){
         launch();
@@ -34,7 +36,7 @@ public class Main extends Application{
         primaryStage.setResizable(false);
         VBox root = new VBox(10);
         root.setStyle("-fx-background-color: #ffffff");
-        primaryStage.setScene(new Scene(root, 16*30, 740));
+        primaryStage.setScene(new Scene(root, WIDTH, 740));
 
         initComponents(root);
 
@@ -52,7 +54,9 @@ public class Main extends Application{
      */
     private void initComponents(VBox root) {
         //Face image
-        face = new ImageView(new Image("res/smile.png", 16*30, 16*30, false, false));
+        face = new ImageView(new Image("res/smile.png", WIDTH, IMG_HEIGHT, false, false));
+        face.setFitWidth(WIDTH);
+        face.setFitHeight(IMG_HEIGHT);
         root.getChildren().add(face);
 
         //chat
@@ -70,7 +74,7 @@ public class Main extends Application{
         //send button
         root.setAlignment(Pos.CENTER);
         send = new Button("SEND");
-        send.setPrefSize(16*30, 30);
+        send.setPrefSize(WIDTH, 30);
         root.getChildren().add(send);
     }
 }

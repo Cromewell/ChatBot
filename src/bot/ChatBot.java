@@ -128,7 +128,7 @@ class ChatBot{
         }else if(matches(input, Phrases.EXIT)){
             answer(Phrases.GOODBYES);
             pause.setDuration(Duration.millis(THINKING_TIME));
-            Platform.runLater(() -> face.setImage(new Image("res"+ File.separator+"sad.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+ File.separator+"sad.png", face.getFitWidth(), face.getFitHeight(), false, false)));
             pause.setOnFinished(e-> System.exit(0));
         }else if(matches(input, Phrases.WHAT_TIME_IS_IT)){
             DateFormat df = new SimpleDateFormat("HH:mm:ss");
@@ -143,13 +143,13 @@ class ChatBot{
         }else if(matches(input, Phrases.LOL)){
             answer(Phrases.LAUGHING);
             pause.setDuration(Duration.millis(FACE_TIME));
-            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"laughing.png", 16*30, 16*30, false, false)));
-            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"laughing.png", face.getFitWidth(), face.getFitHeight(), false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", face.getFitWidth(), face.getFitHeight(), false, false)));
         }else if(matches(input, Phrases.TELL_ME_A_JOKE)){
             answer(Phrases.JOKES);
             pause.setDuration(Duration.millis(FACE_TIME));
-            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"joking.png", 16*30, 16*30, false, false)));
-            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"joking.png", face.getFitWidth(), face.getFitHeight(), false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", face.getFitWidth(), face.getFitHeight(), false, false)));
         }else if(matches(input, Phrases.HOW_OLD_ARE_YOU)){
             answer(Phrases.BOTS_AGE);
             DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
@@ -168,14 +168,14 @@ class ChatBot{
         }else if(matches(input, Phrases.NEED_OF_WISDOM)){
             answer(Phrases.WISE_WORDS);
             pause.setDuration(Duration.millis(FACE_TIME));
-            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"wise.png", 16*30, 16*30, false, false)));
-            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"wise.png", face.getFitWidth(), face.getFitHeight(), false, false)));
+            pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", face.getFitWidth(), face.getFitHeight(), false, false)));
         }else{
             pause.setDuration(Duration.millis(THINKING_TIME));
-            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"confused.png", 16*30, 16*30, false, false)));
+            Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"confused.png", face.getFitWidth(), face.getFitHeight(), false, false)));
             pause.setOnFinished(e->{
                 answer(Phrases.DIDNT_UNDERSTAND);
-                face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false));
+                face.setImage(new Image("res"+File.separator+"smile.png", face.getFitWidth(), face.getFitHeight(), false, false));
             });
         }
         pause.play();
