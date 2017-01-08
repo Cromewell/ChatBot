@@ -148,7 +148,7 @@ class ChatBot{
         }else if(matches(input, Phrases.TELL_ME_A_JOKE)){
             answer(Phrases.JOKES);
             pause.setDuration(Duration.millis(FACE_TIME));
-            Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/laughing.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
+            Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/joking.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
             pause.setOnFinished(e-> face.setImage(new Image(getClass().getResource("/res/smile.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
         }else if(matches(input, Phrases.HOW_OLD_ARE_YOU)){
             answer(Phrases.BOTS_AGE);
