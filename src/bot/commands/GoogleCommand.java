@@ -13,8 +13,11 @@ public class GoogleCommand extends Command{
 
     private String searchFor;
 
-    public GoogleCommand(String trigger) {
-        super(trigger);
+    public GoogleCommand(){}
+
+    @Override
+    public String getTrigger() {
+        return "google";
     }
 
     /**

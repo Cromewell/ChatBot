@@ -42,7 +42,7 @@ class ChatBot{
     private static final long THINKING_TIME = 1700;
     private static final long FACE_TIME = 3000;
     //commands
-    private final Command[] cmds = {new TimerCommand("timer"), new GoogleCommand("google")};
+    private final Command[] cmds = {new TimerCommand(), new GoogleCommand()}; //array of commands
 
     ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;

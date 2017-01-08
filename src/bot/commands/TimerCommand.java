@@ -13,13 +13,11 @@ public class TimerCommand extends Command{
 
     private long sleepTimeInMillis;
 
-    public TimerCommand(String trigger) {
-        super(trigger);
-    }
+    public TimerCommand(){}
 
     @Override
     public String getTrigger() {
-        return super.getTrigger();
+        return "timer";
     }
 
     /**
