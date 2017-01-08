@@ -6,15 +6,9 @@ package bot.commands;
  */
 public abstract class Command {
 
-    private String trigger;
+    Command() {}
 
-    Command(String trigger) {
-        this.trigger = trigger;
-    }
-
-    public String getTrigger(){
-        return trigger;
-    }
+    public abstract String getTrigger();
 
     public abstract boolean isValid(String s);
 
