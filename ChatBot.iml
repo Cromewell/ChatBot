@@ -7,25 +7,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="file://E:/DOWNLOADS/selenium-java-3.0.1" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://E:/DOWNLOADS/selenium-java-3.0.1" recursive="false" />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES />
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://E:/DOWNLOADS/htmlunit-driver-master/htmlunit-driver-master/src/main/java" />
-          <root url="file://E:/DOWNLOADS/htmlunit-driver-master/htmlunit-driver-master/src/test/java" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

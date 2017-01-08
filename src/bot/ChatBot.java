@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.util.Duration;
-
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,6 +23,14 @@ import java.util.Date;
  */
 class ChatBot{
 
+    //TODO:
+    //-Save amount of each name chatted with? -> so, for instance: "chatted with 12 Johns already! Was one of them you?"
+    //-extend voc
+    //-learn function?
+    //-databank?
+    //-more commands: date, time, schedule-book, weather,
+    //-custom scripts for extending voc?
+
     private String userName;
     private TextArea chat;
     private TextField inputField;
@@ -31,9 +38,9 @@ class ChatBot{
     private PauseTransition pause;
     private final String botName = "Kurt";
     //following longs measured in milliseconds
-    private final long writeTime = 500;
-    private final long thinkingTime = 1700;
-    private final long faceTime = 3000;
+    private static final long WRITE_TIME = 500;
+    private static final long THINKING_TIME = 1700;
+    private static final long FACE_TIME = 3000;
     //commands
     private final Command[] cmds = {new TimerCommand("timer"), new GoogleCommand("google")};
 
@@ -75,12 +82,9 @@ class ChatBot{
         userName = dialog.getResult();
 
         chat.appendText(botName+": Ok, your name is "+userName+"? Just making a note...\n");
-        pause = new PauseTransition(Duration.millis(thinkingTime));
+        pause = new PauseTransition(Duration.millis(THINKING_TIME));
         pause.setOnFinished(e->greetUser());
         pause.play();
-        //TODO
-        //Save amount of each name chatted with?
-        //so, for instance: "chatted with 12 Jons already! Was one of them you?"
     }
 
     private void greetUser() {
@@ -105,18 +109,16 @@ class ChatBot{
     private void handleInput(String input) throws InterruptedException {
         input = adjustEnglish(input.toLowerCase());
 
-        pause.setDuration(Duration.millis(writeTime));
+        pause.setDuration(Duration.millis(WRITE_TIME));
         pause.setOnFinished(null); //reset
 
         //check if input is a command
-
         for(Command cmd: cmds){
             if(cmd.isValid(input)){
                 cmd.execute();
                 return;
             }
         }
-
         //end checking
 
         if(matches(input, Phrases.HOW_ARE_YOU)){
@@ -125,7 +127,7 @@ class ChatBot{
             answer(Phrases.ANSWERS_TO_WHAT_ARE_YOU_DOING);
         }else if(matches(input, Phrases.EXIT)){
             answer(Phrases.GOODBYES);
-            pause.setDuration(Duration.millis(thinkingTime));
+            pause.setDuration(Duration.millis(THINKING_TIME));
             Platform.runLater(() -> face.setImage(new Image("res"+ File.separator+"sad.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> System.exit(0));
         }else if(matches(input, Phrases.WHAT_TIME_IS_IT)){
@@ -140,12 +142,12 @@ class ChatBot{
             pause.setOnFinished(e->chat.appendText(botName+": why why why why?\n"));
         }else if(matches(input, Phrases.LOL)){
             answer(Phrases.LAUGHING);
-            pause.setDuration(Duration.millis(faceTime));
+            pause.setDuration(Duration.millis(FACE_TIME));
             Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"laughing.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
         }else if(matches(input, Phrases.TELL_ME_A_JOKE)){
             answer(Phrases.JOKES);
-            pause.setDuration(Duration.millis(faceTime));
+            pause.setDuration(Duration.millis(FACE_TIME));
             Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"joking.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
         }else if(matches(input, Phrases.HOW_OLD_ARE_YOU)){
@@ -165,11 +167,11 @@ class ChatBot{
             answer(Phrases.ANSWERS_TO_CONFIRMATIONS);
         }else if(matches(input, Phrases.NEED_OF_WISDOM)){
             answer(Phrases.WISE_WORDS);
-            pause.setDuration(Duration.millis(faceTime));
+            pause.setDuration(Duration.millis(FACE_TIME));
             Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"wise.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e-> face.setImage(new Image("res"+File.separator+"smile.png", 16*30, 16*30, false, false)));
         }else{
-            pause.setDuration(Duration.millis(thinkingTime));
+            pause.setDuration(Duration.millis(THINKING_TIME));
             Platform.runLater(() -> face.setImage(new Image("res"+File.separator+"confused.png", 16*30, 16*30, false, false)));
             pause.setOnFinished(e->{
                 answer(Phrases.DIDNT_UNDERSTAND);
@@ -210,7 +212,7 @@ class ChatBot{
     }
 
     /**
-     * Checks whether the given string is in the bots vocabluary or not.
+     * Checks whether the given string is in the bots vocabulary or not.
      * @param string    String to match.
      * @param strings    The bots vocabulary.
      * @return true, if a match was found. Otherwise false.
@@ -235,7 +237,7 @@ class ChatBot{
             answer = answer.replace("%user%", userName);
         }
         String finalAnswer = answer;
-        PauseTransition pause = new PauseTransition(Duration.millis(writeTime));
+        PauseTransition pause = new PauseTransition(Duration.millis(WRITE_TIME));
         pause.setOnFinished(e->chat.appendText(botName+": "+ finalAnswer +"\n"));
         pause.play();
     }

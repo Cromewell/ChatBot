@@ -8,7 +8,7 @@ public abstract class Command {
 
     private String trigger;
 
-    public Command(String trigger) {
+    Command(String trigger) {
         this.trigger = trigger;
     }
 

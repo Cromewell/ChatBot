@@ -23,7 +23,7 @@ public class TimerCommand extends Command{
     }
 
     /**
-     * @param s    String to check whetcher it is the timer command or not.
+     * @param s    String to check whether it is the timer command or not.
      * @return    true if yes, otherwise false.
      */
     @Override
