@@ -20,3 +20,4 @@ The bot gets triggered.
 
 After a command:
 - "timer hh:mm:ss" a timer is set. hh stands for hours, mm for minutes, ss for seconds. For example "timer 00:00:10" will ring after 10 seconds
+- "google search string" opens the default browser and searches for the following string -> in this case it would google for "search string"
