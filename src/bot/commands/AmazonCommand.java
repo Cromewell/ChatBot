@@ -10,7 +10,7 @@ import bot.utils.WebUtils;
 public class AmazonCommand extends Command{
 
     private String searchFor;
-    private String country;
+    private String countryId;
 
     public AmazonCommand() {
     }
@@ -25,11 +25,11 @@ public class AmazonCommand extends Command{
         if(s.startsWith(getTrigger()+" de ")||s.startsWith(getTrigger()+" com ")){
             s = s.substring(getTrigger().length()).trim();
             if(s.startsWith("de ")){
-                country = "de";
-                s = s.substring(country.length()).trim();
+                countryId = "de";
+                s = s.substring(countryId.length()).trim();
             }else{
-                country = "com";
-                s = s.substring(country.length()).trim();
+                countryId = "com";
+                s = s.substring(countryId.length()).trim();
             }
             searchFor = WebUtils.adjustSearchText(s);
             return true;
@@ -39,6 +39,6 @@ public class AmazonCommand extends Command{
 
     @Override
     public void execute() {
-        WebUtils.openURL("https://www.amazon."+country+"/s/ref=nb_sb_noss_2?__mk_de_DE=ÅMÅŽÕÑ&url=search-alias%3Daps&field-keywords="+searchFor);
+        WebUtils.openURL("https://www.amazon."+ countryId +"/s/ref=nb_sb_noss_2?__mk_de_DE=ÅMÅŽÕÑ&url=search-alias%3Daps&field-keywords="+searchFor);
     }
 }

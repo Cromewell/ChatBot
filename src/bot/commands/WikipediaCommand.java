@@ -9,6 +9,7 @@ import bot.utils.WebUtils;
 public class WikipediaCommand extends Command{
 
     private String searchFor;
+    private String countryId;
 
     public WikipediaCommand() {
     }
@@ -22,6 +23,13 @@ public class WikipediaCommand extends Command{
     public boolean isValid(String s) {
         if(s.startsWith(getTrigger()+" ")){
             s = s.substring(getTrigger().length()).trim();
+            if(s.startsWith("de ")){
+                countryId = "de";
+                s = s.substring(countryId.length()).trim();
+            }else{
+                countryId = "en";
+                s = s.substring(countryId.length()).trim();
+            }
             searchFor = WebUtils.adjustSearchText(s);
             return true;
         }
@@ -30,6 +38,6 @@ public class WikipediaCommand extends Command{
 
     @Override
     public void execute() {
-        WebUtils.openURL("https://en.wikipedia.org/wiki/"+searchFor);
+        WebUtils.openURL("https://"+ countryId +".wikipedia.org/wiki/"+searchFor);
     }
 }
