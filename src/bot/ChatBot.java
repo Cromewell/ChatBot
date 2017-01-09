@@ -1,8 +1,6 @@
 package bot;
 
-import bot.commands.Command;
-import bot.commands.GoogleCommand;
-import bot.commands.TimerCommand;
+import bot.commands.*;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.scene.control.*;
@@ -10,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.util.Duration;
-import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,7 +25,7 @@ class ChatBot{
     //-extend voc
     //-learn function?
     //-databank?
-    //-more commands: date, time, schedule-book, weather,
+    //-more commands: schedule-book, weather(https://www.wunderground.com/weather/api/), calc, spotify (https://github.com/thelinmichael/spotify-web-api-java), contact
     //-custom scripts for extending voc?
 
     private String userName;
@@ -42,7 +39,7 @@ class ChatBot{
     private static final long THINKING_TIME = 1700;
     private static final long FACE_TIME = 3000;
     //commands
-    private final Command[] cmds = {new TimerCommand(), new GoogleCommand()}; //array of commands
+    private final Command[] cmds = {new TimerCommand(), new GoogleCommand(), new AmazonCommand(), new WikipediaCommand()}; //array of commands
 
     ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;
