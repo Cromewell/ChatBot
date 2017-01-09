@@ -23,4 +23,4 @@ After a command:
 - "timer hh:mm:ss" a timer is set. hh stands for hours, mm for minutes, ss for seconds. For example "timer 00:00:10" will ring after 10 seconds
 - "google search string" opens the default browser and searches for the following string -> in this case it would google for "search string"
 - "amazon countryId search string" opens the default browser and searches for the following on amazon.countryId -> amazon results for "search string". For example "amazon de programmieren" will search for "programmieren" on amazon.de.
-- "wikipedia countryId search string" opens the default browser and searches for the following on wikipedia.countryId -> wikipedia results for "search string". For example "wikipedia en leonardo da vinci" will search for "leonardo en da vinci" on wikipedia. Doesn't work properly for de. en as countryId is just fine!
+- "wikipedia countryId search string" opens the default browser and searches for the following on wikipedia.countryId -> wikipedia results for "search string". For example "wikipedia en leonardo da vinci" will search for "leonardo en da vinci" on wikipedia. Doesn't work properly for de. en as countryId works just fine!
