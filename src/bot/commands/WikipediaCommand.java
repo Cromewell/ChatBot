@@ -6,26 +6,27 @@ import bot.utils.WebUtils;
  * Created by Jo on 09.01.2017.
  * Wikipedia command: valid form: "wikipedia words to wikipedia search for" -> "words to wikipedia search for" is the search text.
  */
-public class WikipediaCommand extends Command{
+public class WikipediaCommand extends Command {
 
     private String searchFor;
     private String countryId;
 
-    public WikipediaCommand() {}
+    public WikipediaCommand() {
+    }
 
     @Override
-    public String getTrigger(){
+    public String getTrigger() {
         return "wikipedia";
     }
 
     @Override
-    public boolean isValid(String s){
-        if(s.startsWith(getTrigger()+" ")){
+    public boolean isValid(String s) {
+        if (s.startsWith(getTrigger() + " ")) {
             s = s.substring(getTrigger().length()).trim();
-            if(s.startsWith("de ")){
+            if (s.startsWith("de ")) {
                 countryId = "de";
                 s = s.substring(countryId.length()).trim();
-            }else{
+            } else {
                 countryId = "en";
                 s = s.substring(countryId.length()).trim();
             }
@@ -36,7 +37,7 @@ public class WikipediaCommand extends Command{
     }
 
     @Override
-    public void execute(){
-        WebUtils.openURL("https://"+ countryId +".wikipedia.org/wiki/"+searchFor);
+    public void execute() {
+        WebUtils.openURL("https://" + countryId + ".wikipedia.org/wiki/" + searchFor);
     }
 }

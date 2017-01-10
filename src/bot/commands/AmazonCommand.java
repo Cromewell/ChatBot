@@ -7,27 +7,27 @@ import bot.utils.WebUtils;
  * Opens amazon in the browser with the searching results for the search parameter.
  * Amazon command: valid form: "amazon words to amazon search for" -> "words to amazon search for" is the search text.
  */
-public class AmazonCommand extends Command{
+public class AmazonCommand extends Command {
 
     private String searchFor;
     private String countryId;
 
-    public AmazonCommand(){
+    public AmazonCommand() {
     }
 
     @Override
-    public String getTrigger(){
+    public String getTrigger() {
         return "amazon";
     }
 
     @Override
-    public boolean isValid(String s){
-        if(s.startsWith(getTrigger()+" de ")||s.startsWith(getTrigger()+" com ")){
+    public boolean isValid(String s) {
+        if (s.startsWith(getTrigger() + " de ") || s.startsWith(getTrigger() + " com ")) {
             s = s.substring(getTrigger().length()).trim();
-            if(s.startsWith("de ")){
+            if (s.startsWith("de ")) {
                 countryId = "de";
                 s = s.substring(countryId.length()).trim();
-            }else{
+            } else {
                 countryId = "com";
                 s = s.substring(countryId.length()).trim();
             }
@@ -38,7 +38,7 @@ public class AmazonCommand extends Command{
     }
 
     @Override
-    public void execute(){
-        WebUtils.openURL("https://www.amazon."+ countryId +"/s/ref=nb_sb_noss_2?__mk_de_DE=ÅMÅŽÕÑ&url=search-alias%3Daps&field-keywords="+searchFor);
+    public void execute() {
+        WebUtils.openURL("https://www.amazon." + countryId + "/s/ref=nb_sb_noss_2?__mk_de_DE=ÅMÅŽÕÑ&url=search-alias%3Daps&field-keywords=" + searchFor);
     }
 }

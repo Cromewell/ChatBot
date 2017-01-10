@@ -16,22 +16,22 @@ import javafx.stage.Stage;
  * Created by Jo on 30.12.2016.
  * Creates the gui and starts the bot.
  */
-public class Main extends Application{
+public class Main extends Application {
 
     private TextArea chat;
     private TextField inputField;
     private Button send;
     private ImageView face;
-    private static final int WIDTH = 16*30; //Window and image width
-    private static final int IMG_HEIGHT = 16*30;
+    private static final int WIDTH = 16 * 30; //Window and image width
+    private static final int IMG_HEIGHT = 16 * 30;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         launch();
     }
 
     //GUI//
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("...");
         primaryStage.setResizable(false);
         VBox root = new VBox(10);
@@ -41,18 +41,19 @@ public class Main extends Application{
         initComponents(root);
 
         primaryStage.show();
-        try{
+        try {
             new ChatBot(chat, inputField, send, face);
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /**
      * Initalizes the components on the root pane
-     * @param root    Root pane
+     *
+     * @param root Root pane
      */
-    private void initComponents(VBox root){
+    private void initComponents(VBox root) {
         //Face image
         face = new ImageView(new Image("res/smile.png", WIDTH, IMG_HEIGHT, false, false));
         face.setFitWidth(WIDTH);
