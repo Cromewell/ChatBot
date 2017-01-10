@@ -12,16 +12,16 @@ public class AmazonCommand extends Command{
     private String searchFor;
     private String countryId;
 
-    public AmazonCommand() {
+    public AmazonCommand(){
     }
 
     @Override
-    public String getTrigger() {
+    public String getTrigger(){
         return "amazon";
     }
 
     @Override
-    public boolean isValid(String s) {
+    public boolean isValid(String s){
         if(s.startsWith(getTrigger()+" de ")||s.startsWith(getTrigger()+" com ")){
             s = s.substring(getTrigger().length()).trim();
             if(s.startsWith("de ")){
@@ -38,7 +38,7 @@ public class AmazonCommand extends Command{
     }
 
     @Override
-    public void execute() {
+    public void execute(){
         WebUtils.openURL("https://www.amazon."+ countryId +"/s/ref=nb_sb_noss_2?__mk_de_DE=ÅMÅŽÕÑ&url=search-alias%3Daps&field-keywords="+searchFor);
     }
 }

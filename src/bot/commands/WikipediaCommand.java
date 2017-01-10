@@ -11,16 +11,15 @@ public class WikipediaCommand extends Command{
     private String searchFor;
     private String countryId;
 
-    public WikipediaCommand() {
-    }
+    public WikipediaCommand() {}
 
     @Override
-    public String getTrigger() {
+    public String getTrigger(){
         return "wikipedia";
     }
 
     @Override
-    public boolean isValid(String s) {
+    public boolean isValid(String s){
         if(s.startsWith(getTrigger()+" ")){
             s = s.substring(getTrigger().length()).trim();
             if(s.startsWith("de ")){
@@ -37,7 +36,7 @@ public class WikipediaCommand extends Command{
     }
 
     @Override
-    public void execute() {
+    public void execute(){
         WebUtils.openURL("https://"+ countryId +".wikipedia.org/wiki/"+searchFor);
     }
 }

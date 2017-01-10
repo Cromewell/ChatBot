@@ -16,7 +16,7 @@ public class TimerCommand extends Command{
     public TimerCommand(){}
 
     @Override
-    public String getTrigger() {
+    public String getTrigger(){
         return "timer";
     }
 
@@ -25,7 +25,7 @@ public class TimerCommand extends Command{
      * @return    true if yes, otherwise false.
      */
     @Override
-    public boolean isValid(String s) {
+    public boolean isValid(String s){
         if(s.startsWith(getTrigger()+" ")){
             s = s.substring(getTrigger().length()).trim();
             Pattern p = Pattern.compile("\\d{2}:\\d{2}:\\d{2}");
@@ -41,7 +41,7 @@ public class TimerCommand extends Command{
      * Converts a string into millis and add them to sleepTimeToMillis.
      * @param s    A string to convert into millis (in the form "dd:dd:dd" (d for digit).
      */
-    private void stringToMillis(String s) {
+    private void stringToMillis(String s){
         String[] tmp = s.split(":");
         for(int i  = 0; i < tmp.length; i++){
             switch(i) {
@@ -62,17 +62,17 @@ public class TimerCommand extends Command{
      * Executes the command timer. Sleeps for a various time and after this, play a sound.
      */
     @Override
-    public void execute() {
+    public void execute(){
         long sleepTime = sleepTimeInMillis;
         sleepTimeInMillis = 0; //reset
-        new Thread(new Runnable() {
+        new Thread(new Runnable(){
             @Override
-            public void run() {
+            public void run(){
                 try {
                     Thread.sleep(sleepTime);
                     AudioClip timerSound = new AudioClip(getClass().getResource("/res/timer.wav").toURI().toString());
                     timerSound.play();
-                } catch (InterruptedException | URISyntaxException e) {
+                } catch (InterruptedException | URISyntaxException e){
                     e.printStackTrace();
                 }
             }

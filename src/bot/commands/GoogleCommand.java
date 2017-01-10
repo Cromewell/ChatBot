@@ -18,7 +18,7 @@ public class GoogleCommand extends Command{
     public GoogleCommand(){}
 
     @Override
-    public String getTrigger() {
+    public String getTrigger(){
         return "google";
     }
 
@@ -28,7 +28,7 @@ public class GoogleCommand extends Command{
      * @return    valid or not.
      */
     @Override
-    public boolean isValid(String s) {
+    public boolean isValid(String s){
         if(s.startsWith(getTrigger()+" ")){
             s = s.substring(getTrigger().length()).trim();
             searchFor = WebUtils.adjustSearchText(s);
@@ -41,7 +41,7 @@ public class GoogleCommand extends Command{
      * Searches the string the user added as parameter.
      */
     @Override
-    public void execute() {
+    public void execute(){
         WebUtils.openURL("https://www.google.de/webhp#q="+searchFor);
     }
 }

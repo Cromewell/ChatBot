@@ -4,9 +4,9 @@ package bot.commands;
  * Created by Jo on 07.01.2017.
  *
  */
-public abstract class Command {
+public abstract class Command{
 
-    Command() {}
+    Command(){}
 
     public abstract String getTrigger();
 

@@ -31,7 +31,7 @@ public class Main extends Application{
 
     //GUI//
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("...");
         primaryStage.setResizable(false);
         VBox root = new VBox(10);
@@ -52,7 +52,7 @@ public class Main extends Application{
      * Initalizes the components on the root pane
      * @param root    Root pane
      */
-    private void initComponents(VBox root) {
+    private void initComponents(VBox root){
         //Face image
         face = new ImageView(new Image("res/smile.png", WIDTH, IMG_HEIGHT, false, false));
         face.setFitWidth(WIDTH);

@@ -41,7 +41,7 @@ class ChatBot{
     //commands
     private final Command[] cmds = {new TimerCommand(), new GoogleCommand(), new AmazonCommand(), new WikipediaCommand()}; //array of commands
 
-    ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
+    ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException{
         this.chat = chat;
         this.inputField = inputField;
         this.face = face;
@@ -50,14 +50,14 @@ class ChatBot{
           Reads the inputfield when send is clicked.
           Appends the message, if its length is > 0 and clears the textfield.
          */
-        send.setOnAction(e-> {
+        send.setOnAction(e->{
             String in = readInput();
-            try {
-                if(in.length() > 0) {
+            try{
+                if(in.length() > 0){
                     chat.appendText(userName+": "+in+"\n");
                     handleInput(in);
                 }
-            } catch (InterruptedException e1) {
+            }catch (InterruptedException e1){
                 e1.printStackTrace();
             }
             inputField.clear();
@@ -84,7 +84,7 @@ class ChatBot{
         pause.play();
     }
 
-    private void greetUser() {
+    private void greetUser(){
         Collections.shuffle(Phrases.GREETINGS);
         chat.appendText(botName+": "+Phrases.GREETINGS.get(0).replace("%user%", userName)+"\n");
         pause.setOnFinished(null);
@@ -103,7 +103,7 @@ class ChatBot{
      * @param input    String to handle.
      * @throws InterruptedException    Failure..
      */
-    private void handleInput(String input) throws InterruptedException {
+    private void handleInput(String input) throws InterruptedException{
         input = adjustEnglish(input.toLowerCase());
 
         pause.setDuration(Duration.millis(WRITE_TIME));
@@ -183,7 +183,7 @@ class ChatBot{
      * @param input    String to check.
      * @return    Words fully spelled.
      */
-    private String adjustEnglish(String input) {
+    private String adjustEnglish(String input){
         input = input.replaceAll("[!?.,]", "");
         if(input.contains(" u ")){
             input = input.replace(" u ", " you ");
@@ -214,7 +214,7 @@ class ChatBot{
      * @param strings    The bots vocabulary.
      * @return true, if a match was found. Otherwise false.
      */
-    private boolean matches(String string, ArrayList<String> strings) {
+    private boolean matches(String string, ArrayList<String> strings){
         for(String s: strings){
             if(string.contains(s)){
                 return true;
@@ -227,7 +227,7 @@ class ChatBot{
      * Displays a random answer out of a suitable list.
      * @param list    List with answers.
      */
-    private void answer(ArrayList<String> list) {
+    private void answer(ArrayList<String> list){
         Collections.shuffle(list);
         String answer = list.get(0);
         if(answer.contains("%user%")){

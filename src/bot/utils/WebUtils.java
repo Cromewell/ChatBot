@@ -9,14 +9,14 @@ import java.net.URISyntaxException;
  * Created by Jo on 09.01.2017.
  *
  */
-public class WebUtils {
+public class WebUtils{
 
     /**
      * Makes the string searchable.
      * @param s    String to adjust.
      * @return    Adjusted string.
      */
-    public static String adjustSearchText(String s) {
+    public static String adjustSearchText(String s){
         s = s.replace("%", "%25");
         s = s.replace(" ", "%20");
         s = s.replace("!", "%21");
@@ -41,11 +41,10 @@ public class WebUtils {
      * @param url    Opens this string as url in the default browser.
      */
     public static void openURL(String url){
-        if(Desktop.isDesktopSupported())
-        {
+        if(Desktop.isDesktopSupported()){
             try {
                 Desktop.getDesktop().browse(new URI(url));
-            } catch (IOException | URISyntaxException e) {
+            }catch (IOException | URISyntaxException e){
                 e.printStackTrace();
             }
         }
