@@ -11,7 +11,7 @@ public abstract class Command {
 
     public abstract String getTrigger();
 
-    public abstract boolean isValid(String s);
+    public abstract boolean isValid(String toValidate);
 
     public abstract void execute();
 

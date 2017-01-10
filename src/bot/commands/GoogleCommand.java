@@ -21,14 +21,14 @@ public class GoogleCommand extends Command {
     /**
      * Validates the input.
      *
-     * @param s String to validate.
+     * @param toValidate String to validate.
      * @return valid or not.
      */
     @Override
-    public boolean isValid(String s) {
-        if (s.startsWith(getTrigger() + " ")) {
-            s = s.substring(getTrigger().length()).trim();
-            searchFor = WebUtils.adjustSearchText(s);
+    public boolean isValid(String toValidate) {
+        if (toValidate.startsWith(getTrigger() + " ")) {
+            toValidate = toValidate.substring(getTrigger().length()).trim();
+            searchFor = WebUtils.adjustSearchText(toValidate);
             return true;
         }
         return false;

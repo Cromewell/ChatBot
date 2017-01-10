@@ -4,7 +4,8 @@ import bot.utils.WebUtils;
 
 /**
  * Created by Jo on 09.01.2017.
- * Wikipedia command: valid form: "wikipedia words to wikipedia search for" -> "words to wikipedia search for" is the search text.
+ * Wikipedia command: valid form: "wikipedia countryId words to wikipedia search for" -> "words to wikipedia search for" is the search text.
+ * CountryId is either "de" or "en" and so is either wikipedia.de or wikipedia.en the wikipedia to search on.
  */
 public class WikipediaCommand extends Command {
 
@@ -20,17 +21,17 @@ public class WikipediaCommand extends Command {
     }
 
     @Override
-    public boolean isValid(String s) {
-        if (s.startsWith(getTrigger() + " ")) {
-            s = s.substring(getTrigger().length()).trim();
-            if (s.startsWith("de ")) {
+    public boolean isValid(String toValidate) {
+        if (toValidate.startsWith(getTrigger() + " de ") || toValidate.startsWith(getTrigger() + " en ")) {
+            toValidate = toValidate.substring(getTrigger().length()).trim();
+            if (toValidate.startsWith("de ")) {
                 countryId = "de";
-                s = s.substring(countryId.length()).trim();
+                toValidate = toValidate.substring(countryId.length()).trim();
             } else {
                 countryId = "en";
-                s = s.substring(countryId.length()).trim();
+                toValidate = toValidate.substring(countryId.length()).trim();
             }
-            searchFor = WebUtils.adjustSearchText(s);
+            searchFor = WebUtils.adjustSearchText(toValidate);
             return true;
         }
         return false;

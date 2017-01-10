@@ -9,14 +9,11 @@
     <list default="true" id="4366b449-6453-4e79-a59f-fe2f9c2f70f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/ChatBot.java" afterPath="$PROJECT_DIR$/src/bot/ChatBot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/Main.java" afterPath="$PROJECT_DIR$/src/bot/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/Phrases.java" afterPath="$PROJECT_DIR$/src/bot/Phrases.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/AmazonCommand.java" afterPath="$PROJECT_DIR$/src/bot/commands/AmazonCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/Command.java" afterPath="$PROJECT_DIR$/src/bot/commands/Command.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/GoogleCommand.java" afterPath="$PROJECT_DIR$/src/bot/commands/GoogleCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" afterPath="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/commands/WikipediaCommand.java" afterPath="$PROJECT_DIR$/src/bot/commands/WikipediaCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bot/utils/WebUtils.java" afterPath="$PROJECT_DIR$/src/bot/utils/WebUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +32,12 @@
       <file leaf-file-name="ChatBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/ChatBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="-2194">
+              <caret line="72" column="23" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
               <folding>
-                <element signature="e#3377#3378#0" expanded="true" />
-                <element signature="e#3420#3421#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3378#3379#0" expanded="true" />
+                <element signature="e#3421#3422#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,8 +46,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="-51">
+              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#782#783#0" expanded="true" />
@@ -59,14 +57,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AmazonCommand.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AmazonCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/commands/AmazonCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="136">
+              <caret line="8" column="102" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="102" />
               <folding>
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#513#514#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="e#626#627#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,16 +82,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WikipediaCommand.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WikipediaCommand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bot/commands/WikipediaCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+            <state relative-caret-position="119">
+              <caret line="7" column="95" lean-forward="false" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
               <folding>
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#450#451#0" expanded="true" />
-                <element signature="e#1033#1034#0" expanded="true" />
-                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#536#537#0" expanded="true" />
+                <element signature="e#570#571#0" expanded="true" />
+                <element signature="e#1294#1295#0" expanded="true" />
+                <element signature="e#1387#1388#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,13 +100,13 @@
       <file leaf-file-name="GoogleCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/commands/GoogleCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="459">
+              <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
               <folding>
                 <element signature="e#354#355#0" expanded="true" />
                 <element signature="e#385#386#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#972#973#0" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#1026#1027#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,8 +115,8 @@
       <file leaf-file-name="Command.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/commands/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            <state relative-caret-position="221">
+              <caret line="13" column="53" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -127,12 +125,11 @@
       <file leaf-file-name="TimerCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/commands/TimerCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="59" column="13" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+            <state relative-caret-position="34">
+              <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#404#405#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#433#434#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,7 +139,7 @@
         <entry file="file://$PROJECT_DIR$/src/bot/Phrases.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,15 +194,15 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/bot/Wait.java" />
         <option value="$PROJECT_DIR$/src/bot/commands/DateComamnd.java" />
-        <option value="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" />
-        <option value="$PROJECT_DIR$/src/bot/commands/AmazonCommand.java" />
-        <option value="$PROJECT_DIR$/src/bot/commands/Command.java" />
-        <option value="$PROJECT_DIR$/src/bot/commands/GoogleCommand.java" />
-        <option value="$PROJECT_DIR$/src/bot/commands/WikipediaCommand.java" />
         <option value="$PROJECT_DIR$/src/bot/utils/WebUtils.java" />
         <option value="$PROJECT_DIR$/src/bot/Main.java" />
         <option value="$PROJECT_DIR$/src/bot/Phrases.java" />
+        <option value="$PROJECT_DIR$/src/bot/commands/Command.java" />
+        <option value="$PROJECT_DIR$/src/bot/commands/GoogleCommand.java" />
+        <option value="$PROJECT_DIR$/src/bot/commands/TimerCommand.java" />
         <option value="$PROJECT_DIR$/src/bot/ChatBot.java" />
+        <option value="$PROJECT_DIR$/src/bot/commands/AmazonCommand.java" />
+        <option value="$PROJECT_DIR$/src/bot/commands/WikipediaCommand.java" />
       </list>
     </option>
   </component>
@@ -793,8 +790,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3377#3378#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -826,8 +824,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3377#3378#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -859,8 +858,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3377#3378#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -892,8 +892,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3377#3378#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -925,8 +926,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3377#3378#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -958,8 +960,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3377#3378#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1109,35 +1112,55 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bot/commands/DateComamnd.java" />
-    <entry file="file://$PROJECT_DIR$/src/bot/Phrases.java">
+    <entry file="file://$PROJECT_DIR$/src/bot/commands/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="53" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bot/commands/TimerCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bot/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/bot/Phrases.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bot/ChatBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="-2194">
+          <caret line="72" column="23" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
           <folding>
-            <element signature="e#3377#3378#0" expanded="true" />
-            <element signature="e#3420#3421#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3421#3422#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bot/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1152,59 +1175,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bot/commands/WikipediaCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding>
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bot/commands/TimerCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="59" column="13" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bot/commands/GoogleCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="459">
+          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
           <folding>
             <element signature="e#354#355#0" expanded="true" />
             <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#1026#1027#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bot/commands/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bot/commands/AmazonCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="136">
+          <caret line="8" column="102" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="102" />
           <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#626#627#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bot/commands/WikipediaCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="95" lean-forward="false" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
+          <folding>
+            <element signature="e#536#537#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
           </folding>
         </state>
       </provider>

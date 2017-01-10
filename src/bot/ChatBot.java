@@ -70,7 +70,7 @@ class ChatBot {
         });
         chat.appendText(botName + ": What's your name? :)\n");
 
-        //Get username
+        //Get username:
         TextInputDialog dialog = new TextInputDialog("Name");
         dialog.setTitle("What's your name?");
         dialog.setGraphic(null);

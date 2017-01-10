@@ -5,7 +5,8 @@ import bot.utils.WebUtils;
 /**
  * Created by Jo on 09.01.2017.
  * Opens amazon in the browser with the searching results for the search parameter.
- * Amazon command: valid form: "amazon words to amazon search for" -> "words to amazon search for" is the search text.
+ * Amazon command: valid form: "amazon countryId words to amazon search for" -> "words to amazon search for" is the search text.
+ * CountryId is either "de" or "com" and so is either amazon.de or amazon.com the amazon to search on.
  */
 public class AmazonCommand extends Command {
 
@@ -21,17 +22,17 @@ public class AmazonCommand extends Command {
     }
 
     @Override
-    public boolean isValid(String s) {
-        if (s.startsWith(getTrigger() + " de ") || s.startsWith(getTrigger() + " com ")) {
-            s = s.substring(getTrigger().length()).trim();
-            if (s.startsWith("de ")) {
+    public boolean isValid(String toValidate) {
+        if (toValidate.startsWith(getTrigger() + " de ") || toValidate.startsWith(getTrigger() + " com ")) {
+            toValidate = toValidate.substring(getTrigger().length()).trim();
+            if (toValidate.startsWith("de ")) {
                 countryId = "de";
-                s = s.substring(countryId.length()).trim();
+                toValidate = toValidate.substring(countryId.length()).trim();
             } else {
                 countryId = "com";
-                s = s.substring(countryId.length()).trim();
+                toValidate = toValidate.substring(countryId.length()).trim();
             }
-            searchFor = WebUtils.adjustSearchText(s);
+            searchFor = WebUtils.adjustSearchText(toValidate);
             return true;
         }
         return false;

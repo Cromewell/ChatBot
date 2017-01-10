@@ -1,7 +1,6 @@
 package bot.commands;
 
 import javafx.scene.media.AudioClip;
-
 import java.net.URISyntaxException;
 import java.util.regex.Pattern;
 
@@ -23,16 +22,16 @@ public class TimerCommand extends Command {
     }
 
     /**
-     * @param s String to check whether it is the timer command or not.
+     * @param toValidate String to check whether it is the timer command or not.
      * @return true if yes, otherwise false.
      */
     @Override
-    public boolean isValid(String s) {
-        if (s.startsWith(getTrigger() + " ")) {
-            s = s.substring(getTrigger().length()).trim();
+    public boolean isValid(String toValidate) {
+        if (toValidate.startsWith(getTrigger() + " ")) {
+            toValidate = toValidate.substring(getTrigger().length()).trim();
             Pattern p = Pattern.compile("\\d{2}:\\d{2}:\\d{2}");
-            if (p.matcher(s).matches()) {
-                stringToMillis(s);
+            if (p.matcher(toValidate).matches()) {
+                stringToMillis(toValidate);
                 return true;
             }
         }
