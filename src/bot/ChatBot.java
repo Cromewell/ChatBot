@@ -1,13 +1,18 @@
 package bot;
 
 import bot.commands.*;
+import bot.utils.FileUtils;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.File;
+import java.net.URISyntaxException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -40,11 +45,16 @@ class ChatBot {
     private static final long FACE_TIME = 3000;
     //commands
     private final Command[] cmds = {new TimerCommand(), new GoogleCommand(), new AmazonCommand(), new WikipediaCommand()}; //array of commands
+    private Learner learner;
 
     ChatBot(TextArea chat, TextField inputField, Button send, ImageView face) throws InterruptedException {
         this.chat = chat;
         this.inputField = inputField;
         this.face = face;
+
+        //initalize learner:
+        FileUtils.createFiles();
+        learner = new Learner(new File("vocabulary.txt"));
 
         /*
           Reads the inputfield when send is clicked.
@@ -120,7 +130,10 @@ class ChatBot {
         }
         //end checking
 
-        if (matches(input, Phrases.HOW_ARE_YOU)) {
+        if (input.equals("/learn")) {
+            learn();
+            return;
+        } else if ((matches(input, Phrases.HOW_ARE_YOU))) {
             answer(Phrases.ANSWERS_TO_HOW_ARE_YOU);
         } else if (matches(input, Phrases.WHAT_ARE_YOU_DOING)) {
             answer(Phrases.ANSWERS_TO_WHAT_ARE_YOU_DOING);
@@ -169,6 +182,9 @@ class ChatBot {
             pause.setDuration(Duration.millis(FACE_TIME));
             Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/wise.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
             pause.setOnFinished(e -> face.setImage(new Image(getClass().getResource("/res/smile.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
+        } else if (matches(input, Phrases.CUSTOM_VOCABULARY)) {
+            int index = Phrases.CUSTOM_VOCABULARY.indexOf(input);
+            pause.setOnFinished(e -> chat.appendText(botName + ": " + Phrases.CUSTOM_RESPONSES.get(index) + "\n"));
         } else {
             pause.setDuration(Duration.millis(THINKING_TIME));
             Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/confused.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
@@ -242,5 +258,23 @@ class ChatBot {
         PauseTransition pause = new PauseTransition(Duration.millis(WRITE_TIME));
         pause.setOnFinished(e -> chat.appendText(botName + ": " + finalAnswer + "\n"));
         pause.play();
+    }
+
+    private void learn() {
+        //Get vocabulary:
+        TextInputDialog dialog = new TextInputDialog("Vocabulary");
+        dialog.setTitle("Which sentence do you want to teach " + botName + "?");
+        dialog.setGraphic(null);
+        dialog.setHeaderText("Please enter the sentence:");
+        dialog.showAndWait();
+        String vocabulary = dialog.getResult();
+        //Get Response:
+        dialog = new TextInputDialog("Response");
+        dialog.setTitle("What should " + botName + " response?");
+        dialog.setGraphic(null);
+        dialog.setHeaderText("Please enter the sentence:");
+        dialog.showAndWait();
+        String response = dialog.getResult();
+        learner.learnSentence(vocabulary, response);
     }
 }
