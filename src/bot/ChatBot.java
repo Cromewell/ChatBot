@@ -182,7 +182,7 @@ class ChatBot {
             pause.setDuration(Duration.millis(FACE_TIME));
             Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/wise.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
             pause.setOnFinished(e -> face.setImage(new Image(getClass().getResource("/res/smile.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
-        } else if (matches(input, Phrases.CUSTOM_VOCABULARY)) {
+        } else if (Phrases.CUSTOM_VOCABULARY.contains(input)) {
             int index = Phrases.CUSTOM_VOCABULARY.indexOf(input);
             pause.setOnFinished(e -> chat.appendText(botName + ": " + Phrases.CUSTOM_RESPONSES.get(index) + "\n"));
         } else {
