@@ -18,7 +18,7 @@ public class FileUtils {
         try {
             text += "\n";
             byte[] fileText = read(file).getBytes();
-            byte[] appendText = text.getBytes();
+            byte[] appendText = text.toLowerCase().getBytes();
             byte[] combined = new byte[fileText.length + appendText.length];
             for (int i = 0; i < combined.length; ++i) {
                 combined[i] = i < fileText.length ? fileText[i] : appendText[i - fileText.length];
