@@ -24,3 +24,6 @@ After a command:
 - "google search string" opens the default browser and searches for the following string -> in this case it would google for "search string"
 - "amazon countryId search string" opens the default browser and searches for the following on amazon.countryId -> amazon results for "search string". For example "amazon de programmieren" will search for "programmieren" on amazon.de.
 - "wikipedia countryId search string" opens the default browser and searches for the following on wikipedia.countryId -> wikipedia results for "search string". For example "wikipedia en leonardo da vinci" will search for "leonardo da vinci" on wikipedia. Doesn't work properly for de. en as countryId works just fine!
+
+LEARN:
+- "/learn" to enter the learn function. Add a sentence and a bot response to the vocabulary.

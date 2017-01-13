@@ -25,6 +25,10 @@ class Phrases {
 
     static final ArrayList<String> DIDNT_UNDERSTAND = new ArrayList<>(Arrays.asList("Sorry, I don't understand :s", "What?", "Didn't get it, sry :/", "I don't know, what to answer.. :s", "o.O?"));
 
+
+    static final ArrayList<String> CUSTOM_RESPONSES = new ArrayList<>();
+
+
     //vocabulary
     static final ArrayList<String> HELLO = new ArrayList<>(Arrays.asList("hi", "hello", "hey", "nice to meet you"));
     static final ArrayList<String> HOW_ARE_YOU = new ArrayList<>(Arrays.asList("how are you"));
@@ -38,5 +42,8 @@ class Phrases {
     static final ArrayList<String> NEED_OF_WISDOM = new ArrayList<>(Arrays.asList("tell me wise words", "wise words", "what is wisdom", "do you have an advise", "advise", "wisdom", "if i had wisdom"));
 
     static final ArrayList<String> WHAT_TIME_IS_IT = new ArrayList<>(Arrays.asList("what time is it", "what is the time", "what's the time"));
+
+
+    static final ArrayList<String> CUSTOM_VOCABULARY = new ArrayList<>();
 
 }
