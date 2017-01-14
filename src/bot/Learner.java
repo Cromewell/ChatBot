@@ -38,8 +38,7 @@ class Learner {
     }
 
     /**
-     *
-     * @param vocabularyAndResponse  Adds this vocabulary to the bot.
+     * @param vocabularyAndResponse Adds this vocabulary to the bot.
      */
     private void addToVoc(String[] vocabularyAndResponse) {
         Phrases.CUSTOM_VOCABULARY.add(vocabularyAndResponse[0]);

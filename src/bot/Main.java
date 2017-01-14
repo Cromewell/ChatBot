@@ -32,7 +32,7 @@ public class Main extends Application {
     //GUI//
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("...");
+        primaryStage.setTitle("ChatBot");
         primaryStage.setResizable(false);
         VBox root = new VBox(10);
         root.setStyle("-fx-background-color: #ffffff");

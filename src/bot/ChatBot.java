@@ -2,6 +2,7 @@ package bot;
 
 import bot.commands.*;
 import bot.utils.FileUtils;
+import bot.utils.WindowUtils;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.scene.control.*;
@@ -81,12 +82,7 @@ class ChatBot {
         chat.appendText(botName + ": What's your name? :)\n");
 
         //Get username:
-        TextInputDialog dialog = new TextInputDialog("Name");
-        dialog.setTitle("What's your name?");
-        dialog.setGraphic(null);
-        dialog.setHeaderText("Please enter your name :)");
-        dialog.showAndWait();
-        userName = dialog.getResult();
+        userName = WindowUtils.buildTextDialog("What's your name?", "Please enter your name :)", "Name");
 
         chat.appendText(botName + ": Ok, your name is " + userName + "? Just making a note...\n");
         pause = new PauseTransition(Duration.millis(THINKING_TIME));
@@ -262,19 +258,11 @@ class ChatBot {
 
     private void learn() {
         //Get vocabulary:
-        TextInputDialog dialog = new TextInputDialog("Vocabulary");
-        dialog.setTitle("Which sentence do you want to teach " + botName + "?");
-        dialog.setGraphic(null);
-        dialog.setHeaderText("Please enter the sentence:");
-        dialog.showAndWait();
-        String vocabulary = dialog.getResult();
+        String vocabulary = WindowUtils.buildTextDialog("Which sentence do you want to teach " + botName + "?", "Please enter the sentence:", "Vocabulary");
+
         //Get Response:
-        dialog = new TextInputDialog("Response");
-        dialog.setTitle("What should " + botName + " response?");
-        dialog.setGraphic(null);
-        dialog.setHeaderText("Please enter the sentence:");
-        dialog.showAndWait();
-        String response = dialog.getResult();
+        String response = WindowUtils.buildTextDialog("What should " + botName + " response?", "Please enter the sentence:", "Response");
+
         learner.learnSentence(vocabulary, response);
     }
 }
