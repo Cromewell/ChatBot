@@ -1,7 +1,6 @@
 package bot;
 
 import bot.utils.FileUtils;
-
 import java.io.File;
 
 /**
@@ -12,29 +11,49 @@ class Learner {
 
     private File file;
 
-    Learner(File in) {
-        this.file = in;
+    /**
+     * Loads the Vocabulary on init, if file has content.
+     *
+     * @param vocFile The vocabulary.txt
+     */
+    Learner(File vocFile) {
+        this.file = vocFile;
         if (!FileUtils.read(file).equals("")) {
             loadSentences();
         }
     }
 
+    /**
+     * Writes the given vocabulary and response into the vocabulary.txt file.
+     *
+     * @param vocabulary Vocabulary to write into file.
+     * @param response   Response to write into file.
+     */
     void learnSentence(String vocabulary, String response) {
         FileUtils.write(vocabulary + "::" + response, file); //save learned (divided by "::" as marker)
         loadSentences(); //make learned available
     }
 
+    /**
+     * Loads the vocabulary.txt file and adds the content to the bots vocabulary.
+     */
     private void loadSentences() {
         String sentences = FileUtils.read(file);
-        splitSentences(sentences);
-    }
-
-    private void splitSentences(String sentences) {
-        String[] couples = sentences.split("\\n");
+        String[] couples = splitSentences(sentences);
         for (String couple : couples) {
             String[] vocabularyAndResponse = couple.split("::");
             addToVoc(vocabularyAndResponse);
         }
+    }
+
+    /**
+     * Returns the sentences split by each new line.
+     *
+     * @param sentences Sentence to split.
+     * @return Split sentence.
+     */
+    private String[] splitSentences(String sentences) {
+        return sentences.split("\\n");
     }
 
     /**

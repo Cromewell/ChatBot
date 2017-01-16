@@ -42,6 +42,9 @@ public class FileUtils {
         return "";
     }
 
+    /**
+     * Creates vocabulary.txt, if it doesn't already exists.
+     */
     public static void createFiles() {
         File voc = new File(System.getProperty("user.dir") + "/vocabulary.txt");
         if (!voc.exists()) {

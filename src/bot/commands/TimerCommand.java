@@ -1,12 +1,12 @@
 package bot.commands;
 
 import javafx.scene.media.AudioClip;
+
 import java.net.URISyntaxException;
 import java.util.regex.Pattern;
 
 /**
  * Created by Jo on 07.01.2017.
- * <p>
  * Timer command: valid form: "timer 00:01:10" -> timer hh:mm:ss
  */
 public class TimerCommand extends Command {

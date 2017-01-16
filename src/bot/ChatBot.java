@@ -9,13 +9,13 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
-import java.net.URISyntaxException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -29,7 +29,6 @@ class ChatBot {
     //TODO:
     //-Save amount of each name chatted with? -> so, for instance: "chatted with 12 Johns already! Was one of them you?"
     //-extend voc
-    //-learn function?
     //-databank?
     //-more commands: schedule-book, weather(https://www.wunderground.com/weather/api/), calc, spotify (https://github.com/thelinmichael/spotify-web-api-java), contact
     //-custom scripts for extending voc?
@@ -53,7 +52,7 @@ class ChatBot {
         this.inputField = inputField;
         this.face = face;
 
-        //initalize learner:
+        //initializes learner and vocabulary.txt, if needed:
         FileUtils.createFiles();
         learner = new Learner(new File("vocabulary.txt"));
 
@@ -73,27 +72,23 @@ class ChatBot {
             }
             inputField.clear();
         });
+
         //enable pressing enter to send message:
         inputField.setOnKeyPressed(ke -> {
             if (ke.getCode() == KeyCode.ENTER) {
                 send.fire();
             }
         });
-        chat.appendText(botName + ": What's your name? :)\n");
 
+        chat.appendText(botName + ": What's your name? :)\n");
         //Get username:
         userName = WindowUtils.buildTextDialog("What's your name?", "Please enter your name :)", "Name");
 
+        //greet user:
         chat.appendText(botName + ": Ok, your name is " + userName + "? Just making a note...\n");
         pause = new PauseTransition(Duration.millis(THINKING_TIME));
-        pause.setOnFinished(e -> greetUser());
+        pause.setOnFinished(e -> answer(Phrases.GREETINGS));
         pause.play();
-    }
-
-    private void greetUser() {
-        Collections.shuffle(Phrases.GREETINGS);
-        chat.appendText(botName + ": " + Phrases.GREETINGS.get(0).replace("%user%", userName) + "\n");
-        pause.setOnFinished(null);
     }
 
     /**
@@ -114,18 +109,17 @@ class ChatBot {
     private void handleInput(String input) throws InterruptedException {
         input = adjustEnglish(input.toLowerCase());
 
-        pause.setDuration(Duration.millis(WRITE_TIME));
-        pause.setOnFinished(null); //reset
+        pause.setOnFinished(null); //reset action.
 
-        //check if input is a command
+        //check if input is a command:
         for (Command cmd : cmds) {
             if (cmd.isValid(input)) {
                 cmd.execute();
                 return;
             }
         }
-        //end checking
 
+        //react to user input:
         if (input.equals("/learn")) {
             learn();
             return;
@@ -136,39 +130,33 @@ class ChatBot {
         } else if (matches(input, Phrases.EXIT)) {
             answer(Phrases.GOODBYES);
             pause.setDuration(Duration.millis(THINKING_TIME));
-            Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/sad.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
+            Platform.runLater(() -> showImage("/res/sad.png"));
             pause.setOnFinished(e -> System.exit(0));
         } else if (matches(input, Phrases.WHAT_TIME_IS_IT)) {
             DateFormat df = new SimpleDateFormat("HH:mm:ss");
-            pause.setOnFinished(e -> chat.appendText(botName + ": It is " + df.format(new Date()) + "\n"));
+            botPrintAfterSleep(WRITE_TIME, "It is " + df.format(new Date()));
         } else if (matches(input, Phrases.THANKS)) {
             answer(Phrases.NO_PROBLEM);
-        } else if (input.equals("why?")) {
-            pause.setOnFinished(e -> chat.appendText(botName + ": why why?\n"));
-            pause.play();
-        } else if (input.equals("why why why?")) {
-            pause.setOnFinished(e -> chat.appendText(botName + ": why why why why?\n"));
+        } else if (input.equals("why")) {
+            botPrintAfterSleep(WRITE_TIME, "why why?");
+        } else if (input.equals("why why why")) {
+            botPrintAfterSleep(WRITE_TIME, "why why why why?");
         } else if (matches(input, Phrases.LOL)) {
             answer(Phrases.LAUGHING);
             pause.setDuration(Duration.millis(FACE_TIME));
-            Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/laughing.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
-            pause.setOnFinished(e -> face.setImage(new Image(getClass().getResource("/res/smile.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
+            Platform.runLater(() -> showImage("/res/laughing.png"));
+            pause.setOnFinished(e -> showImage("/res/smile.png"));
         } else if (matches(input, Phrases.TELL_ME_A_JOKE)) {
             answer(Phrases.JOKES);
             pause.setDuration(Duration.millis(FACE_TIME));
-            Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/joking.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
-            pause.setOnFinished(e -> face.setImage(new Image(getClass().getResource("/res/smile.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
+            Platform.runLater(() -> showImage("/res/joking.png"));
+            pause.setOnFinished(e -> showImage("/res/smile.png"));
         } else if (matches(input, Phrases.HOW_OLD_ARE_YOU)) {
             answer(Phrases.BOTS_AGE);
-            DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-            int day = Integer.parseInt(df.format(new Date()).substring(0, 2));
-            int month = Integer.parseInt(df.format(new Date()).substring(3, 5));
-            int yearsAlive = Integer.parseInt(df.format(new Date()).substring(6, 10)) - 2016;
-            if (month <= 12 && day < 30) {
-                yearsAlive--;
-            }
-            int finalYears = yearsAlive;
-            pause.setOnFinished(e -> chat.appendText("  So I'm " + finalYears + "\n"));
+            LocalDate birthday = LocalDate.of(2016, 12, 30); //bot created on 30.12.2016
+            LocalDate now = LocalDate.now();
+            Period p = Period.between(birthday, now); //calculate time since bot was created.
+            botPrintAfterSleep(WRITE_TIME, "  So I'm " + p.getYears() + " years " + p.getMonths() + " months and " + p.getDays() + " days old.");
         } else if (matches(input, Phrases.HELLO)) {
             answer(Phrases.GREETINGS);
         } else if (matches(input, Phrases.CONFIRMATIONS)) {
@@ -176,20 +164,29 @@ class ChatBot {
         } else if (matches(input, Phrases.NEED_OF_WISDOM)) {
             answer(Phrases.WISE_WORDS);
             pause.setDuration(Duration.millis(FACE_TIME));
-            Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/wise.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
-            pause.setOnFinished(e -> face.setImage(new Image(getClass().getResource("/res/smile.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
+            Platform.runLater(() -> showImage("/res/wise.png"));
+            pause.setOnFinished(e -> showImage("/res/smile.png"));
         } else if (Phrases.CUSTOM_VOCABULARY.contains(input)) {
             int index = Phrases.CUSTOM_VOCABULARY.indexOf(input);
-            pause.setOnFinished(e -> chat.appendText(botName + ": " + Phrases.CUSTOM_RESPONSES.get(index) + "\n"));
+            botPrintAfterSleep(WRITE_TIME, Phrases.CUSTOM_RESPONSES.get(index));
         } else {
             pause.setDuration(Duration.millis(THINKING_TIME));
-            Platform.runLater(() -> face.setImage(new Image(getClass().getResource("/res/confused.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false)));
+            Platform.runLater(() -> showImage("/res/confused.png"));
             pause.setOnFinished(e -> {
                 answer(Phrases.DIDNT_UNDERSTAND);
-                face.setImage(new Image(getClass().getResource("/res/smile.png").toString(), face.getFitWidth(), face.getFitHeight(), false, false));
+                showImage("/res/smile.png");
             });
         }
         pause.play();
+    }
+
+    /**
+     * Changes the current face to the given res image.
+     *
+     * @param res Image to show.
+     */
+    private void showImage(String res) {
+        face.setImage(new Image(getClass().getResource(res).toString(), face.getFitWidth(), face.getFitHeight(), false, false));
     }
 
     /**
@@ -250,9 +247,18 @@ class ChatBot {
         if (answer.contains("%user%")) {
             answer = answer.replace("%user%", userName);
         }
-        String finalAnswer = answer;
-        PauseTransition pause = new PauseTransition(Duration.millis(WRITE_TIME));
-        pause.setOnFinished(e -> chat.appendText(botName + ": " + finalAnswer + "\n"));
+        botPrintAfterSleep(WRITE_TIME, answer);
+    }
+
+    /**
+     * Prints the msg after a delay in the chat.
+     *
+     * @param sleep Time to sleep in milliseconds.
+     * @param msg   Message to send.
+     */
+    private void botPrintAfterSleep(long sleep, String msg) {
+        PauseTransition pause = new PauseTransition(Duration.millis(sleep));
+        pause.setOnFinished(e -> chat.appendText(botName + ": " + msg + "\n"));
         pause.play();
     }
 

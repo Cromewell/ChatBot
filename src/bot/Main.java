@@ -49,12 +49,12 @@ public class Main extends Application {
     }
 
     /**
-     * Initalizes the components on the root pane
+     * Initializes the components on the root pane
      *
      * @param root Root pane
      */
     private void initComponents(VBox root) {
-        //Face image
+        //face image
         face = new ImageView(new Image("res/smile.png", WIDTH, IMG_HEIGHT, false, false));
         face.setFitWidth(WIDTH);
         face.setFitHeight(IMG_HEIGHT);
